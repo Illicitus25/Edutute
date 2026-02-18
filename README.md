@@ -16,12 +16,12 @@ academic planning.
 
 ## Features
 
--   Automated attendance tracking\
--   Digital timetable management\
--   Attendance monitoring and history\
--   Task reminders and alerts\
--   Free period productivity planning\
--   Secure cloud-based storage\
+-   Automated attendance tracking
+-   Digital timetable management
+-   Attendance monitoring and history
+-   Task reminders and alerts
+-   Free period productivity planning
+-   Secure cloud-based storage
 -   Clean and modern Android UI
 
 ------------------------------------------------------------------------
