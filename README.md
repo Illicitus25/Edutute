@@ -1,41 +1,37 @@
-# Edutute -- Smart Curriculum Activity & Attendance App
+# Edutute -- Institutional Attendance & Student Management App
 
 ![Platform](https://img.shields.io/badge/Platform-Android-green)
 ![Language](https://img.shields.io/badge/Language-Kotlin-purple)
 ![Backend](https://img.shields.io/badge/Backend-Firebase-orange)
+![Architecture](https://img.shields.io/badge/Architecture-Client--Cloud-blue)
 ![Status](https://img.shields.io/badge/Status-Active-success)
-![License](https://img.shields.io/badge/License-Academic-blue)
 
-Edutute is an Android application that automates attendance tracking and
-helps students manage timetables, reminders, and free periods
-efficiently. It replaces manual attendance systems with a digital
-solution while improving student productivity through structured
-academic planning.
-
-------------------------------------------------------------------------
-
-## Features
-
--   Automated attendance tracking
--   Digital timetable management
--   Attendance monitoring and history
--   Task reminders and alerts
--   Free period productivity planning
--   Secure cloud-based storage
--   Clean and modern Android UI
+Edutute is an Android application designed for educational institutions
+to digitally manage classes, students, and attendance. It enables
+teachers to quickly mark attendance, store student records in a cloud
+database, and generate attendance reports. The system replaces
+inefficient manual attendance workflows with a fast, scalable, and
+reliable mobile solution.
 
 ------------------------------------------------------------------------
 
-## Screenshots
+## Key Features
 
-(Add screenshots after building UI)
+-   Faculty login with secure authentication
+-   Class and student management
+-   Fast attendance marking using checkbox interface
+-   Cloud-based attendance storage
+-   Attendance reports and statistics
+-   Offline-first support with cloud synchronization (future scope)
+-   Clean Material Design interface optimized for classroom use
 
-  --------------------------------------------------------------------------------------------------------------------------------
-  Login Screen                 Dashboard                        Attendance                        Timetable
-  ---------------------------- -------------------------------- --------------------------------- --------------------------------
-  ![](screenshots/login.png)   ![](screenshots/dashboard.png)   ![](screenshots/attendance.png)   ![](screenshots/timetable.png)
+------------------------------------------------------------------------
 
-  --------------------------------------------------------------------------------------------------------------------------------
+## Target Users
+
+**Primary Users** - Teachers / Faculty
+
+**Secondary Users** - School / College Administrators
 
 ------------------------------------------------------------------------
 
@@ -43,24 +39,45 @@ academic planning.
 
 **Frontend** - Kotlin - XML Layouts - Android SDK
 
-**Backend** - Firebase Firestore - Firebase Authentication
+**Backend** - Firebase Authentication - Firebase Firestore Database
 
-**Tools** - Android Studio - GitHub - Firebase Console
+**Tools** - Android Studio - Firebase Console - GitHub
 
 ------------------------------------------------------------------------
 
-## Architecture
+## System Architecture
 
-Client--Server Architecture
+Edutute uses a lightweight client--cloud architecture:
 
-Android App → Firebase Authentication → Firestore Database
+Teacher Android App\
+→ Firebase Authentication\
+→ Firebase Backend Services\
+→ Firestore Database
 
-Modules:
+Modules include:
 
--   Authentication Module
--   Attendance Module
--   Schedule Module
--   Reminder Module
+-   Authentication & Role Management
+-   Class Management
+-   Student Database
+-   Attendance Capture Module
+-   Reports & Analytics Module
+
+This architecture ensures secure authentication, scalable storage, and
+fast data access.
+
+------------------------------------------------------------------------
+
+## Database Structure
+
+Firestore collections:
+
+users/ - userId - name - role (teacher/admin)
+
+classes/ - classId - className
+
+students/ - studentId - name - rollNo - classId
+
+attendance/ - classId - date - markedBy - presentStudentIds\[\]
 
 ------------------------------------------------------------------------
 
@@ -70,33 +87,17 @@ Clone the repository:
 
 git clone https://github.com/Illicitus25/Edutute.git
 
-Open in Android Studio and run on emulator or device.
-
-------------------------------------------------------------------------
-
-## Project Structure
-
-Edutute/ ├── app/ │ ├── activities/ │ ├── fragments/ │ ├── adapters/ │
-├── models/ │ └── utils/ ├── res/ │ ├── layout/ │ ├── drawable/ │ └──
-values/
-
-------------------------------------------------------------------------
-
-## Use Cases
-
-**Students** - Track attendance - View timetable - Manage tasks
-
-**Institutions** - Reduce manual attendance work - Maintain digital
-attendance records
+Open in Android Studio and run on emulator or Android device.
 
 ------------------------------------------------------------------------
 
 ## Future Scope
 
+-   Admin dashboard
 -   Face recognition attendance
--   AI-based productivity recommendations
--   Faculty dashboard
--   Cross-platform support
+-   Offline sync with Room database
+-   Attendance export (CSV/PDF)
+-   Web dashboard for institutions
 
 ------------------------------------------------------------------------
 
@@ -112,4 +113,4 @@ LinkedIn: https://linkedin.com/in/prakhyat25
 
 ## License
 
-This project is for academic and educational purposes.
+Academic project for educational purposes.
