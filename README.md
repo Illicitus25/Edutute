@@ -68,7 +68,7 @@ Modules:
 
 Clone the repository:
 
-git clone https://github.com/yourusername/edutute.git
+git clone https://github.com/Illicitus25/Edutute.git
 
 Open in Android Studio and run on emulator or device.
 
@@ -105,8 +105,8 @@ attendance records
 Prakhyat Singh\
 B.Tech Artificial Intelligence & Machine Learning
 
-GitHub: https://github.com/yourusername\
-LinkedIn: https://linkedin.com/in/yourprofile
+GitHub: https://github.com/Illicitus25\
+LinkedIn: https://linkedin.com/in/prakhyat25
 
 ------------------------------------------------------------------------
 
