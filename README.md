@@ -1,88 +1,125 @@
-# Edutute
+<h1 align="center">🎓 Edutute</h1>
+<p align="center">
+  <b>A modern Android school operations app built with Kotlin, XML, and Firebase</b>
+</p>
 
-Edutute is an Android school operations app built with Kotlin, XML, and Firebase. It supports two role-aware experiences:
+<p align="center">
+  Edutute delivers two role-aware experiences:
+  <br/>
+  <b>Headmaster</b> for full institution administration
+  ·
+  <b>Faculty</b> for restricted day-to-day academic operations
+</p>
 
-- `Headmaster`: full institution setup and administration
-- `Faculty`: restricted day-to-day experience with filtered access
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
+  <img src="https://img.shields.io/badge/Language-Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" />
+  <img src="https://img.shields.io/badge/UI-XML%20%2B%20Material%203-1976D2?style=for-the-badge&logo=materialdesign&logoColor=white" />
+  <img src="https://img.shields.io/badge/Backend-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+  <img src="https://img.shields.io/badge/Database-Cloud%20Firestore-FF6F00?style=for-the-badge&logo=firebase&logoColor=white" />
+  <img src="https://img.shields.io/badge/Architecture-MVVM%20%2F%20Layered-0A66C2?style=for-the-badge" />
+</p>
 
-The app currently covers authentication, institution setup, faculty management, classes, subjects, students, and attendance, with shared modules reused across both roles instead of maintaining duplicate screens.
+---
 
-## Highlights
+## ✨ Overview
 
-- Role-based authentication for `Headmaster` and `Faculty`
-- Faculty self-registration linked to a valid institution via `Institutional ID`
-- Headmaster-managed faculty invitations with activation by reset email
-- Duplicate faculty-account prevention by linking auth to an existing faculty record
-- Role-based drawer navigation and post-login routing
-- Shared fragments with logic-level access control, not just hidden UI
-- Personalized faculty dashboard
-- Filtered class access for faculty
-- Restricted attendance flows for faculty
-- Firebase Authentication + Firestore-backed data storage
-- Modular repository/viewmodel/UI structure
+**Edutute** is an Android-based school operations app designed to streamline institutional workflows.  
+It currently supports:
 
-## Current Feature Set
+- authentication
+- institution setup
+- faculty management
+- class and subject management
+- student handling
+- attendance tracking
 
-### Authentication
+Instead of maintaining duplicate screens for different users, Edutute reuses **shared modules** across both roles wherever possible, while enforcing access restrictions through app logic.
+
+---
+
+## 🌟 Highlights
+
+- 🔐 Role-based authentication for **Headmaster** and **Faculty**
+- 🏫 Faculty self-registration linked through a valid **Institutional ID**
+- 📩 Headmaster-managed faculty onboarding with activation via reset email
+- 🧩 Prevention of duplicate faculty accounts by linking auth to existing faculty records
+- 🧭 Role-aware drawer navigation and post-login routing
+- 🛡️ Shared fragments with **logic-level access control**, not just hidden UI
+- 📊 Personalized faculty dashboard
+- 📚 Filtered class access for faculty
+- ✅ Restricted attendance permissions for faculty
+- ☁️ Firebase Authentication + Cloud Firestore-backed data storage
+- 🧱 Modular repository / ViewModel / UI structure
+
+---
+
+## 📦 Current Feature Set
+
+### 🔐 Authentication
 
 - Headmaster account registration and sign-in
 - Faculty account registration and sign-in
 - Role resolution from stored user profile data
-- Route users to the correct in-app experience after login
+- Post-login routing to the correct in-app experience
 - Password reset support
 
-### Institution Management
+### 🏛️ Institution Management
 
 - Institution profile setup and editing
 - Academic session awareness
-- Faculty read-only institution profile view for restricted users
+- Read-only institution profile access for faculty users
 
-### Faculty Management
+### 👩‍🏫 Faculty Management
 
-- Headmaster can add, edit, archive, and view faculty
-- Faculty added by headmaster are now provisioned for account activation
-- Reset/activation email is sent to invited faculty users
-- Existing faculty profile is linked to the auth account to avoid duplicate records
+- Headmaster can add, edit, archive, and view faculty members
+- Faculty added by the headmaster can be provisioned for account activation
+- Reset / activation emails are sent to invited faculty users
+- Existing faculty profiles are linked to auth accounts to avoid duplicate records
 - Faculty can view their own profile with restricted edit permissions
 
-### Academic Structure
+### 🏫 Academic Structure
 
 - Class management
 - Section management
 - Class-section management
 - Subject management
-- Teacher assignment to classes/subjects
+- Teacher assignment to classes and subjects
 
-### Student Management
+### 👨‍🎓 Student Management
 
 - Student creation and editing
 - Class-section assignment
-- Roll number handling
-- Student detail screens and attendance summary views
+- Roll number management
+- Student detail screens
+- Attendance summary views
 
-### Attendance
+### 🗓️ Attendance
 
-- Headmaster:
-  - mark class attendance
-  - view class attendance
-  - rectify saved class attendance
-  - mark faculty attendance
-  - view faculty attendance
-  - rectify faculty attendance
-- Faculty:
-  - view personalized attendance summary on dashboard
-  - mark class attendance only for class-sections where they are the class teacher
-  - submit class attendance only once per class-section per day
-  - view class attendance for allowed classes
-  - no faculty-attendance marking
-  - no institution-wide analytics
-  - no saved-record rectification
+#### Headmaster
+- Mark class attendance
+- View class attendance
+- Rectify saved class attendance
+- Mark faculty attendance
+- View faculty attendance
+- Rectify faculty attendance
 
-## Role-Based Experience
+#### Faculty
+- View personalized attendance summary on the dashboard
+- Mark class attendance only for class-sections where they are the class teacher
+- Submit class attendance only once per class-section per day
+- View class attendance for permitted classes
+- No faculty-attendance marking
+- No institution-wide analytics
+- No saved-record rectification
 
-### Headmaster
+---
 
-The headmaster gets the full app experience, including:
+## 👥 Role-Based Experience
+
+## Headmaster
+
+The **Headmaster** gets the complete app experience:
 
 - Dashboard
 - Faculty
@@ -92,9 +129,9 @@ The headmaster gets the full app experience, including:
 - Attendance
 - Institution Profile
 
-### Faculty
+## Faculty
 
-Faculty uses a simplified drawer and restricted data scope:
+The **Faculty** experience is simplified and restricted:
 
 - Dashboard
 - Classes
@@ -102,42 +139,68 @@ Faculty uses a simplified drawer and restricted data scope:
 - Institution
 - Logout
 
-Faculty sees only the classes they are assigned to as class teacher or subject teacher, and all restrictions are enforced in repository/viewmodel logic as well as in the UI.
+Faculty can only access classes where they are assigned as:
 
-## Invitation + Account Linking Flow
+- **Class Teacher**
+- **Subject Teacher**
 
-One of the main goals of the recent authentication work was eliminating duplicate faculty records.
+> All restrictions are enforced at both the **repository / ViewModel level** and the **UI level**.
 
-### Before
+---
 
-- Headmaster could create a faculty profile
-- Faculty could later self-register separately
-- That could produce two records for the same teacher
+## 🔗 Invitation + Account Linking Flow
 
-### Now
+One of the main goals of the recent authentication work was to eliminate duplicate faculty records.
 
-1. Headmaster creates the faculty record once.
-2. The app provisions a faculty auth account in the background.
-3. A reset/activation email is sent to the faculty email address.
-4. The faculty profile is stored in invited state until the faculty signs in.
-5. When the faculty account becomes active, the same faculty record is linked and reused.
-6. Faculty self-registration checks for an existing faculty record by institution + email and links to it instead of creating a duplicate.
+### 🚫 Previous Flow
 
-This keeps the data model clean and ensures the headmaster’s faculty list remains the single source of truth.
+- Headmaster created a faculty profile
+- Faculty later self-registered separately
+- This could create two records for the same teacher
 
-## Tech Stack
+### ✅ Current Flow
 
-- Language: `Kotlin`
-- UI: `XML` layouts with Material 3 components
-- Platform: `Android`
-- Architecture style: layered `data / domain / presentation`
-- Backend: `Firebase Authentication`
-- Database: `Cloud Firestore`
-- Async: Kotlin coroutines
-- Navigation: AndroidX Navigation
-- State handling: ViewModel + `StateFlow`
+1. Headmaster creates the faculty record once  
+2. The app provisions a faculty auth account in the background  
+3. A reset / activation email is sent to the faculty email address  
+4. The faculty profile stays in an invited state until sign-in  
+5. Once activated, the same faculty record is linked and reused  
+6. Faculty self-registration checks for an existing faculty record using **institution + email** and links it instead of creating a new one  
 
-## Project Structure
+This keeps the headmaster’s faculty list as the **single source of truth**.
+
+---
+
+## 🛠️ Tech Stack
+
+<p>
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white" />
+  <img src="https://img.shields.io/badge/XML-FF6F00?style=flat-square&logo=xml&logoColor=white" />
+  <img src="https://img.shields.io/badge/Material%203-1E88E5?style=flat-square&logo=materialdesign&logoColor=white" />
+  <img src="https://img.shields.io/badge/AndroidX-34A853?style=flat-square&logo=android&logoColor=white" />
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
+  <img src="https://img.shields.io/badge/Cloud%20Firestore-FF8F00?style=flat-square&logo=firebase&logoColor=white" />
+  <img src="https://img.shields.io/badge/Coroutines-0095D5?style=flat-square" />
+  <img src="https://img.shields.io/badge/Navigation%20Component-3F51B5?style=flat-square" />
+  <img src="https://img.shields.io/badge/ViewModel-00695C?style=flat-square" />
+  <img src="https://img.shields.io/badge/StateFlow-5E35B1?style=flat-square" />
+</p>
+
+| Layer | Tools / Technologies |
+|------|------|
+| **Language** | Kotlin |
+| **UI** | XML layouts + Material 3 |
+| **Platform** | Android |
+| **Architecture** | Layered `data / domain / presentation` |
+| **Backend** | Firebase Authentication |
+| **Database** | Cloud Firestore |
+| **Async** | Kotlin Coroutines |
+| **Navigation** | AndroidX Navigation |
+| **State Handling** | ViewModel + `StateFlow` |
+
+---
+
+## 🧱 Project Structure
 
 ```text
 Edutute/
@@ -156,186 +219,3 @@ Edutute/
 ├── build.gradle.kts
 ├── settings.gradle.kts
 └── README.md
-```
-
-### Presentation Modules
-
-- `auth`
-- `dashboard`
-- `institution`
-- `faculty`
-- `classes`
-- `subjects`
-- `students`
-- `attendance`
-- `main`
-
-## Architecture Notes
-
-Edutute uses a simple dependency container instead of a DI framework. `AppContainer` wires repository implementations and shared services, then viewmodels consume repository interfaces.
-
-Core patterns used in the codebase:
-
-- `domain.repository.*` defines contracts
-- `data.repository.*` provides Firebase/Firestore implementations
-- `presentation.*` owns UI and viewmodels
-- `RoleAccessManager` centralizes permission checks and scope filtering
-- `SessionStore` maintains the current in-app session
-
-This keeps feature code modular while still being easy to follow in a single-app-module project.
-
-## Firestore Model Overview
-
-The app is organized around a small set of top-level and institution-scoped collections.
-
-### Top-level
-
-- `users/{uid}`
-- `institutions/{institutionId}`
-
-### Institution-scoped subcollections
-
-- `faculty`
-- `classes`
-- `sections`
-- `subjects`
-- `students`
-- `academic_sessions`
-- session-scoped `class_sections`
-- session-scoped `teacher_assignments`
-- session-scoped `student_assignments`
-- attendance collections for class and faculty attendance
-
-### Important Profile Fields
-
-`users/{uid}` stores auth-linked profile/session metadata such as:
-
-- `uid`
-- `email`
-- `role`
-- `userType`
-- `institutionId`
-- `institutionalId`
-- `linkedFacultyId`
-- `accountStatus`
-
-`institutions/{institutionId}/faculty/{facultyId}` stores faculty records such as:
-
-- `authUid`
-- `accountStatus`
-- `fullName`
-- `email`
-- `phoneNumber`
-- `employeeCode`
-- `qualification`
-- `joiningDate`
-- `inviteSentAt`
-- `status`
-
-## Requirements
-
-- Android Studio with current Android SDK tools
-- JDK compatible with the Android Gradle Plugin in this repo
-- Firebase project with:
-  - Email/Password authentication enabled
-  - Firestore enabled
-- `google-services.json` configured for the target Firebase project
-
-## Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Illicitus25/Edutute.git
-cd Edutute
-```
-
-### 2. Open in Android Studio
-
-Open the root project folder and let Gradle sync.
-
-### 3. Verify Firebase configuration
-
-Make sure the project is connected to the intended Firebase project and that `app/google-services.json` matches it.
-
-At minimum, enable:
-
-- Firebase Authentication with Email/Password
-- Cloud Firestore
-
-### 4. Build the app
-
-On Windows:
-
-```powershell
-.\gradlew.bat assembleDebug
-```
-
-On macOS/Linux:
-
-```bash
-./gradlew assembleDebug
-```
-
-### 5. Run on a device or emulator
-
-Use Android Studio or:
-
-```powershell
-.\gradlew.bat installDebug
-```
-
-## Development Notes
-
-- Role restrictions are enforced in logic, not only by hiding buttons.
-- Shared fragments are reused for both headmaster and faculty flows wherever possible.
-- Faculty attendance is intentionally scoped tighter than headmaster attendance.
-- Faculty users cannot mark their own faculty attendance.
-- Class attendance restrictions for faculty are tied to class-teacher assignments.
-- The repo currently uses a single `app` module with a layered package structure.
-
-## Navigation Summary
-
-The app launches into an auth gate and then routes based on the resolved session:
-
-- unauthenticated -> login
-- headmaster with incomplete institution setup -> institution profile
-- authenticated headmaster -> dashboard
-- authenticated faculty -> faculty dashboard
-
-Drawer contents are also swapped dynamically based on the stored role.
-
-## Build Status
-
-The project has been built successfully with:
-
-```powershell
-.\gradlew.bat assembleDebug
-```
-
-## Documentation
-
-Additional architecture notes live in:
-
-- [docs/admin-architecture.md](docs/admin-architecture.md)
-
-## Roadmap Ideas
-
-- Better automated tests around auth and role access
-- Export/reporting features
-- Notifications and reminders
-- Improved analytics
-- Optional offline caching strategy
-- Backend-assisted invitation flow via Cloud Functions/Admin SDK
-
-## Author
-
-Prakhyat Singh  
-B.Tech Artificial Intelligence & Machine Learning
-
-- GitHub: [Illicitus25](https://github.com/Illicitus25)
-- LinkedIn: [prakhyat25](https://linkedin.com/in/prakhyat25)
-
-## License
-
-This project is currently presented as an academic/product portfolio project for educational use.
