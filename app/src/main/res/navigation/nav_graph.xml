@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authGateFragment">
+
+    <fragment
+        android:id="@+id/authGateFragment"
+        android:name="com.example.edutute.presentation.auth.AuthGateFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_authGateFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/authGateFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_authGateFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/authGateFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_authGateFragment_to_institutionProfileFragment"
+            app:destination="@id/institutionProfileFragment"
+            app:popUpTo="@id/authGateFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.edutute.presentation.auth.LoginFragment"
+        android:label="@string/title_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_authGateFragment"
+            app:destination="@id/authGateFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.edutute.presentation.auth.SignUpFragment"
+        android:label="@string/title_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_authGateFragment"
+            app:destination="@id/authGateFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.edutute.presentation.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard" />
+
+    <fragment
+        android:id="@+id/institutionProfileFragment"
+        android:name="com.example.edutute.presentation.institution.InstitutionProfileFragment"
+        android:label="@string/title_institution_profile" />
+
+    <fragment
+        android:id="@+id/facultyListFragment"
+        android:name="com.example.edutute.presentation.faculty.FacultyListFragment"
+        android:label="@string/title_faculty" />
+
+    <fragment
+        android:id="@+id/facultyFormFragment"
+        android:name="com.example.edutute.presentation.faculty.FacultyFormFragment"
+        android:label="@string/title_faculty">
+        <argument
+            android:name="facultyId"
+            app:argType="string"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/facultyDetailFragment"
+        android:name="com.example.edutute.presentation.faculty.FacultyDetailFragment"
+        android:label="@string/title_faculty_detail">
+        <argument
+            android:name="facultyId"
+            app:argType="string" />
+        <argument
+            android:name="isSelfProfile"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/classesFragment"
+        android:name="com.example.edutute.presentation.classes.ClassesFragment"
+        android:label="@string/title_classes" />
+
+    <fragment
+        android:id="@+id/classDetailsFragment"
+        android:name="com.example.edutute.presentation.classes.ClassDetailsFragment"
+        android:label="@string/title_class_details">
+        <argument
+            android:name="classSectionId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/subjectsFragment"
+        android:name="com.example.edutute.presentation.subjects.SubjectsFragment"
+        android:label="@string/title_subjects" />
+
+    <fragment
+        android:id="@+id/studentsListFragment"
+        android:name="com.example.edutute.presentation.students.StudentsListFragment"
+        android:label="@string/title_students" />
+
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="com.example.edutute.presentation.attendance.AttendanceFragment"
+        android:label="@string/title_attendance" />
+
+    <fragment
+        android:id="@+id/studentFormFragment"
+        android:name="com.example.edutute.presentation.students.StudentFormFragment"
+        android:label="@string/title_students">
+        <argument
+            android:name="studentId"
+            app:argType="string"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studentDetailFragment"
+        android:name="com.example.edutute.presentation.students.StudentDetailFragment"
+        android:label="@string/title_student_detail">
+        <argument
+            android:name="studentId"
+            app:argType="string" />
+    </fragment>
+</navigation>

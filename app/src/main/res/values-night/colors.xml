@@ -1,0 +1,37 @@
+<resources>
+    <color name="brand_primary">#9CB7FF</color>
+    <color name="brand_on_primary">#09193F</color>
+    <color name="brand_primary_container">#18306D</color>
+    <color name="brand_on_primary_container">#DEE6FF</color>
+    <color name="brand_secondary">#FFB297</color>
+    <color name="brand_on_secondary">#4C1808</color>
+    <color name="brand_secondary_container">#5E2816</color>
+    <color name="brand_on_secondary_container">#FFE4DB</color>
+    <color name="brand_tertiary">#62E0D3</color>
+    <color name="brand_on_tertiary">#052E2A</color>
+    <color name="brand_background">#08111F</color>
+    <color name="brand_surface">#101A2E</color>
+    <color name="brand_surface_variant">#172540</color>
+    <color name="brand_surface_elevated">#13213A</color>
+    <color name="brand_outline">#304A73</color>
+    <color name="brand_outline_variant">#24395C</color>
+    <color name="brand_text_primary">#F1F5FF</color>
+    <color name="brand_text_secondary">#A8B7D5</color>
+    <color name="brand_text_muted">#8294BA</color>
+    <color name="brand_success">#49D2AF</color>
+    <color name="brand_warning">#FFC15A</color>
+    <color name="brand_error">#FF8AA1</color>
+    <color name="brand_gradient_start">#16398F</color>
+    <color name="brand_gradient_end">#6B2B3C</color>
+    <color name="brand_gradient_bottom">#10284C</color>
+    <color name="brand_glow_primary">#4D7FA2FF</color>
+    <color name="brand_glow_secondary">#3DFF8A65</color>
+    <color name="brand_divider">#1E3050</color>
+    <color name="brand_shadow">#66000000</color>
+    <color name="brand_badge_fill">#1B2E57</color>
+    <color name="brand_badge_text">#CFE0FF</color>
+    <color name="brand_nav_item_active">#183063</color>
+    <color name="brand_nav_item_text_active">#D7E3FF</color>
+    <color name="brand_nav_item_icon_active">#D7E3FF</color>
+    <color name="brand_scrim">#33000000</color>
+</resources>
